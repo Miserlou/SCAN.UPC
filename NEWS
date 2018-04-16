@@ -1,0 +1,59 @@
+CHANGES IN VERSION 2.7.1
+-------------------------
+
+FIXES
+    o ParseMetaFromGtfFile improvements (ambiguous function call, spaces in FASTA descriptors)
+    o BrainArray summarization when probe maps to multiple genes/probesets
+
+NEW FEATURES
+
+    o This package provides support for the Affymetrix HTA 2.0 arrays
+
+CHANGES IN VERSION 2.5.8
+-------------------------
+
+NEW FEATURES
+
+    o This package now provides "generic" functions for UPC normalizing any type of gene-expression data. These values can be input as vectors or ExpressionSet objects. This means that data from Illumina BeadChip microarrays or any other type of microarray can be UPC normalized with relative ease. It is also easy through integration with the GEOquery package to UPC normalize any preprocessed data set from GEO.
+    o This package now uses the ComBat function from the sva package to make it easy to adjust gene expression data for batch effects. This can be done for any type of expression data.
+    o RNA-Sequencing data can now be input as matrix files and/or where a header is present in the input data files.
+
+NOTES
+
+    o The SCAN_TwoColor and UPC_TwoColor functions have changed. They now return ExpressionSet objects.
+    o The SCAN_TwoColor and UPC_TwoColor methods now add an integer suffix to each probe for which there is a duplicate name.
+    o The UPC_RNASeq function now also returns an ExpressionSet object.
+    o A bug was fixed in which UPC_RNASeq returned NA values if there was no entry in the annotation file.
+
+
+CHANGES IN VERSION 2.2.8
+-------------------------
+
+NEW FEATURES
+
+    o Ability to download microarray data directly from
+    Gene Expression Omnibus and normalize the files in
+    a single command.
+
+    o Alternate functions (SCANfast and UPCfast) for
+    performing SCAN and UPC normalization that use fewer
+    probes and thus execute in ~60% less time.
+
+    o Ability to execute normalize multiple .CEL files in
+    parallel either across multiple cores on a single
+    computer or across multiple computers on a cluster.
+
+    o Ability to generate RNA-Seq annotation files to be used
+    with the UPC_RNASeq function from GTF/FASTA source files.
+
+    o Ability to download and install BrainArray packages
+    via an R function.
+
+    o Improved support for Affymetrix exon arrays.
+
+    o Improved support for Affymetrix HT_HG-U133A early
+    access exon arrays.
+
+OTHER
+
+    o Various improvements and clarifications to the docs.

@@ -1,0 +1,8 @@
+test*
+*_out.txt
+output*
+*.CEL
+US*.txt
+GSM*.txt
+Agilent*
+tmp*
